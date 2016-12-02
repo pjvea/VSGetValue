@@ -9,14 +9,14 @@ import Foundation
 
 protocol VSGetValue
 {
-    func getValue<T>(jsonData:NSDictionary, fieldName:String) -> T?
+    func getValue<T>(_ jsonData:NSDictionary, fieldName:String) -> T?
 }
 
 extension VSGetValue
 {
-    func getValue<T>(jsonData:NSDictionary, fieldName:String) -> T?
+    func getValue<T>(_ jsonData:NSDictionary, fieldName:String) -> T?
     {
-        if let value: T? = jsonData.objectForKey(fieldName) as? T?
+        if let value: T? = jsonData.object(forKey: fieldName) as? T?
         {
             return value
         }
